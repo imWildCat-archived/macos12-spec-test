@@ -19,8 +19,8 @@ jobs:
           sw_vers
           system_profiler SPSoftwareDataType
 
-          sysctl -a
-          sysctl -n machdep.cpu.brand_string
-          free -mh
+          sysctl -a || echo "failed"
+          sysctl -n machdep.cpu.brand_string || echo "failed"
+          free -mh || echo "failed"
 
           sysctl -a | grep mem
